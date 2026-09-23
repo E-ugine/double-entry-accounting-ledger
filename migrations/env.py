@@ -6,8 +6,7 @@ from sqlalchemy import engine_from_config, pool
 from app.config import get_settings
 from app.db.base import Base
 
-# Import model modules here so Base.metadata is populated for autogenerate, e.g.:
-# from app.db.models import account, journal_entry, line  # noqa: F401
+from app.db.models import account, journal_entry, line 
 
 config = context.config
 

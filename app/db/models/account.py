@@ -19,7 +19,7 @@ class Account(Base):
     created_at : Mapped[datetime] = mapped_column(DateTime(timezone=True),server_default=func.now(), nullable=False)
     updated_at : Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
 
-    __table_args__ = CheckConstraint("account_type IN ('asset', 'liability', 'equity', 'revenue', 'expense')",name="ck_account_type")
+    __table_args__ = (CheckConstraint("account_type IN ('asset', 'liability', 'equity', 'revenue', 'expense')",name="ck_account_type"),)
 
 
 
